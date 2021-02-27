@@ -1,14 +1,17 @@
 package com.netmind.model;
 
+import java.time.LocalDate;
 import java.util.Date;
+import java.util.UUID;
 
-public class Student {
+public class Student extends NetmindObject {
 
 	private Integer idStudent;
 	private String name;
 	private String surname;
 	private Integer age;
-	private Date dateOfBirth;
+	private LocalDate dateOfBirth;
+	private UUID uuid;
 
 	public Integer getIdStudent() {
 		return idStudent;
@@ -42,22 +45,27 @@ public class Student {
 		this.age = age;
 	}
 
-	public Date getDateOfBirth() {
+	public LocalDate getDateOfBirth() {
 		return dateOfBirth;
 	}
 
-	public void setDateOfBirth(Date dateOfBirth) {
-		this.dateOfBirth = dateOfBirth;
+	public void setDateOfBirth(LocalDate localDate) {
+		this.dateOfBirth = localDate;
 	}
 
 	public Student(Integer idStudent, String name, String surname, Integer age,
-			Date dateOfBirth) {
+			LocalDate dateOfBirth) {
 		super();
 		this.idStudent = idStudent;
 		this.name = name;
 		this.surname = surname;
 		this.age = age;
 		this.dateOfBirth = dateOfBirth;
+	}
+	
+	public Student(UUID uuid) {
+		super();
+		this.uuid = uuid;
 	}
 
 	public Student() {
